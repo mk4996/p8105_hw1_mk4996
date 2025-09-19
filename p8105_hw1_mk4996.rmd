@@ -5,26 +5,24 @@ date: "2025-09-19"
 output: github_document
 ---
 
+##Problem 1
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(moderndive)
+data("early_january_weather")
 ```
 
-## R Markdown
+The dataset `early_january_weather` contains hourly meteorological data for LGA, JFK and EWR in early January 2013.  
+It has `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns.  
+The important variables include:
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+- **time_hour**: time of measurement  
+- **temp, dewp**: temperature and dewpoint in Fahrenheit  
+- **humid**: relative humidity  
+- **wind_dir, wind_speed, wind_gust**: wind direction (in degrees), speed and gust speed (in mph)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-```
 
-## Including Plots
+##Problem 2
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
