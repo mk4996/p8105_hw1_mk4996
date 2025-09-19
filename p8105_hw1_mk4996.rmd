@@ -5,7 +5,7 @@ date: "2025-09-19"
 output: github_document
 ---
 
-##Problem 1
+### Problem 1
 ```{r setup, include=FALSE}
 library(moderndive)
 data("early_january_weather")
@@ -20,9 +20,20 @@ The important variables include:
 - **humid**: relative humidity  
 - **wind_dir, wind_speed, wind_gust**: wind direction (in degrees), speed and gust speed (in mph)
 
+The mean temperature during this period was `r mean(early_january_weather$temp, na.rm = TRUE)` °F.
 
+### Scatterplot of temperature vs. time
+```{r scatterplot, message=FALSE, warning=FALSE}
+library(tidyverse)
 
-##Problem 2
-
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
+  geom_point() +
+  labs(
+    title = "Temperature vs Time in Early January (NYC airports)",
+    x = "Time (hour)",
+    y = "Temperature (°F)",
+    color = "Humidity (%)"
+  )
+```
 
 
